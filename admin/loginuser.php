@@ -19,7 +19,7 @@
             <a href="/MIGHTY-MIIGHT-MOTOR/index.html"><img src="/MIGHTY-MIIGHT-MOTOR/img/logo.jpg" class="logo"
                     alt="Mighty_Might_Motor" /></a>
             <ul>
-                <li><a href="/MIGHTY-MIIGHT-MOTOR/index.html">Home</a></li>
+                <li><a href="/MIGHTY-MIIGHT-MOTOR/index.html">Back to Home</a></li>
             </ul>
         </header>
         <div class="wrapper">

@@ -1,0 +1,13 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.nav-logo {
+    width: 40%;
+    height: 40%;
+}
+
+.container-info p {
+    color: #FFFFFF;
+}
