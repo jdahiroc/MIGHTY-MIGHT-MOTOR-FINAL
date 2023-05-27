@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
 
     if ($result) {
         //echo "Updated User Successfully!";
-        header('location:UserManagementInterface.php'); //after clicking update button redirect sa UserManagementInterface
+        header('location:index.php'); //after clicking update button redirect sa UserManagementInterface
     } else {
         die(mysqli_error($conn));
     }

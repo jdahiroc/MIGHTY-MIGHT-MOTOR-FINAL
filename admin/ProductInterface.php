@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
     <!--Header-->
     <div class="header">
         <h5>Mighty-Mite Motors</h5>
@@ -30,10 +29,6 @@
     <div class="table">
         <div class="d-flex justify-content-center mt-4">
             <h1>Product Interface</h1>
-        </div>
-        <div class="d-flex justify-content-center">
-            <div class=""><select class="m-2" name="combo" id="sel1"></select></div>
-            <div class=""><button class="m-2 btn btn-primary" id="btnsearch">Search</button></div>
         </div>
         <table style="width: 100%" class="table center-table" id="table1">
             <thead>

@@ -8,13 +8,14 @@ if (isset($_POST['submit'])) {
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
-    $query = "Insert into user (fname, mname, lname, email, username, password) values('$firstname', '$middlename', '$lastname', '$email', '$username', '$password')"; //fname, mname etc. table name sa database nako na
+    $query = "Insert into user (fname, mname, lname, email, username, password) values('$firstname', '$middlename', '$lastname', '$email', '$username', '$hash_password')"; //fname, mname etc. table name sa database nako na
     $result = mysqli_query($conn, $query);
 
     if ($result) {
-        //echo "User Added Successfully!";
-        header('location:UserManagementInterface.php'); //after click submit button redirect sa UserManageInterface
+        echo "<script>alert('Malii Credentials')</script>";
+        header('location:loginuser.php'); //after click submit button redirect sa UserManageInterface
     } else {
         die(mysqli_error($conn)); //fails if no connection from database
     }
