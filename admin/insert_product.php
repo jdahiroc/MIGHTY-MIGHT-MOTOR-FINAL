@@ -53,6 +53,11 @@ if (isset($_POST['insert_product'])) {
 </head>
 
 <body class="bg-light">
+    <div class="d-flex justify-content-start mt-4">
+        <button><a href="/MIGHTY-MIIGHT-MOTOR/admin/index.php" class="text-decoration-none btn btn-dark">Back
+                to
+                dashboard</a></button>
+    </div>
     <div class="container mt-3">
         <h1 class="text-center">Add Product</h1>
         <!-- forms -->
