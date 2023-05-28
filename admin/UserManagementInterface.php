@@ -19,17 +19,6 @@ require_once('connect.php');
 </head>
 
 <body>
-    <nav class="navbar bg-body-tertiary">
-        <form class="container-fluid justify-content-start">
-            <button class="btn btn-light me-2" type="button">Users</button>
-            <button class="btn btn-light me-2" type="button">Products</button>
-            <button class="btn btn-light me-2" type="button">Transaction
-                History</button>
-            <button class="d-flex flex-row-reverse btn btn-danger" type="button"><a
-                    class="text-decoration-none text-light-emphasis" href="/MIGHTY-MIIGHT-MOTOR/index.html">Log
-                    Out</a></button>
-        </form>
-    </nav>
     <div class="d-flex justify-content-center mt-4">
         <h1>User Management</h1>
     </div>
@@ -37,7 +26,7 @@ require_once('connect.php');
                 class="text-light text-decoration-none mr-5"
                 href="/MIGHTY-MIIGHT-MOTOR/admin/CreateUserInterface.php">ADD
                 USER</a></button></div>
-    <table class="table-light h-100 d-inlineflex justify-content-center mt-5" id="table1">
+    <table class="table-light h-100 m-auto mt-5" id="table1">
         <thead>
             <tr class="text-center text-dark">
                 <th>ID</th>
@@ -71,16 +60,16 @@ require_once('connect.php');
                     //below diha nila e ang data na fetch sa database, ma display sa td using the variable name inside sa while loop
                     //sa button part mapansin nimo ang a href nako kay naay php?updateid='.$id.' para mag determine nato sa url sa website na same id ba ang ge click
                     echo '<tr>
-            <th>' . $id . '</th> 
-            <td>' . $firstname . '</td>
-            <td>' . $middlename . '</td>
-            <td>' . $lastname . '</td>
-            <td>' . $email . '</td>
-            <td>' . $username . '</td>
-            <td>' . $password . '</td>
+            <th class="overflow-x-auto">' . $id . '</th> 
+            <td class="overflow-x-auto">' . $firstname . '</td>
+            <td class="overflow-x-auto">' . $middlename . '</td>
+            <td class="overflow-x-auto">' . $lastname . '</td>
+            <td class="overflow-x-auto">' . $email . '</td>
+            <td class="overflow-x-auto">' . $username . '</td>
+            <td class="overflow-x-auto">' . $password . '</td>
             <td>
-            <button class="btn btn-secondary mr-1 "><a href="/MIGHTY-MIIGHT-MOTOR/admin/updateuser.php?updateid=' . $id . '" class="text-decoration-none text-light">Update</a></button>
-            <button class="btn btn-danger mr-1"><a href="/MIGHTY-MIIGHT-MOTOR/admin/deleteuser.php?deleteid=' . $id . '" class="text-decoration-none text-light">Delete</a></button>
+            <button class="btn btn-secondary m-auto overflow-x-auto "><a href="/MIGHTY-MIIGHT-MOTOR/admin/updateuser.php?updateid=' . $id . '" class="text-decoration-none text-light">Update</a></button>
+            <button class="btn btn-danger m-auto overflow-x-auto"><a href="/MIGHTY-MIIGHT-MOTOR/admin/deleteuser.php?deleteid=' . $id . '" class="text-decoration-none text-light">Delete</a></button>
             </td>
         </tr>';
                 }

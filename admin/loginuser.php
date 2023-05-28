@@ -1,8 +1,3 @@
-<!-- Connect to database -->
-<?php
-include('../admin/connect.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -101,6 +96,9 @@ include('../admin/connect.php');
 // // Close the database connection
 // mysqli_close($conn);
 
+
+include('../admin/connect.php');
+
 if (isset($_POST['user_login'])) {
     $user_username = $_POST['user_username'];
     $user_password = $_POST['user_password'];
@@ -111,7 +109,8 @@ if (isset($_POST['user_login'])) {
     $row_data = mysqli_fetch_assoc($result);
     if ($row_count > 0) {
         if (password_verify($user_password, $row_data['user_password'])) {
-
+            echo "<script>alert('Login Successfully!')</script>";
+            header('header:/MIGHTY-MIIGHT-MOTOR/admin/index.php');
         } else {
             echo "<script>alert('Malii Credentials')</script>";
         }

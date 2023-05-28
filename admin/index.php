@@ -14,40 +14,51 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <!-- navbar -->
     <div class="container-fluid p-0">
         <!-- first -->
         <nav class="nav nav-bar navbar-expand-lg navbar-light">
-            <div class="container-fluid">
+            <div class="container-fluid justify-content-center">
                 <img src="../img/logo.jpg" alt="logo" class="nav-logo">
         </nav>
         <!-- second -->
         <div class="bg-light">
-            <h3 class="text-center p-2">Admin Dashboard</h3>
+            <h3 class="text-center p-2">ADMIN DASHBOARD</h3>
         </div>
         <!-- third -->
         <div class="row">
             <div class="col-md-12 p-1">
                 <div class="button text-center">
                     <button><a href="/MIGHTY-MIIGHT-MOTOR/admin/index.php?create_user"
-                            class="nav-link px-3 text-decoration-none">Create
+                            class="nav-link px-3 text-decoration-none">Add
                             User</a></button>
                     <button><a href="/MIGHTY-MIIGHT-MOTOR/admin/index.php?user_manage"
                             class="nav-link px-3 text-decoration-none">User
                             Management</a></button>
-                    <button><a href="" class="logout nav-link bg-danger p-1 px-3">Logout</a></button>
+                    <button><a href="/MIGHTY-MIIGHT-MOTOR/admin/insert_product.php?add_product"
+                            class="nav-link px-3 text-decoration-none">Add Product</a></button>
+                    <button><a href="/MIGHTY-MIIGHT-MOTOR/admin/index.php?product_manage"
+                            class="nav-link px-3 text-decoration-none">Product Management</a></button>
+                    <button><a href="../admin/loginuser.php"
+                            class="logout nav-link bg-danger p-1 px-3">Logout</a></button>
                 </div>
             </div>
         </div>
         <!-- fourth -->
-        <div class="container">
+        <div class="container overflow-x-auto m-auto">
             <?php
             if (isset($_GET['create_user'])) {
                 include('createuser.php');
             }
             if (isset($_GET['user_manage'])) {
                 include('usermanagement.php');
+            }
+            if (isset($_GET['add_product'])) {
+                include('insert_product.php');
+            }
+            if (isset($_GET['product_manage'])) {
+                include('ProductInterface.php');
             }
             ?>
         </div>

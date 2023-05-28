@@ -1,3 +1,6 @@
+<?php
+require_once('../admin/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +18,11 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Icons link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- GOOGLE FONT LINK -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body>
@@ -34,9 +42,6 @@
                             <a class="nav-link" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Products</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#">Cart <img style="width:20px; height:20px;"
                                     src="/MIGHTY-MIIGHT-MOTOR/img/icons/shopping-cart.png" alt="cart-shopping"></a>
                         </li>
@@ -47,123 +52,41 @@
 
         <!-- 2nd Child -->
         <div class="bg-light">
-            <h3 class="h3 text-center p-3">Broom Broom</h3>
+            <h3 class="h3 text-center p-3">MIGHTY MIGHT MOTOR</h3>
         </div>
 
         <!-- 3rd Child -->
         <div class="row justify-content-center" id="home">
             <div class="col-md-10">
                 <div class="row">
-                    <div class="col-md-4 mt-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\1.png" class="card-img-top" alt="#001">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
+                    <!-- fetch data to display products from database -->
+                    <?php
+                    $query = "SELECT * FROM `product`";
+                    $result_query = mysqli_query($conn, $query);
+                    // $row = mysqli_fetch_assoc($result_query);
+                    while ($row = mysqli_fetch_assoc($result_query)) {
+                        $product_id = $row['product_id'];
+                        $item_name = $row['item_name'];
+                        $item_description = $row['item_description'];
+                        $item_image = $row['item_image'];
+                        $item_price = $row['item_price'];
+
+                        // display item card dynamic datas
+                        echo "<div class='col-md-4 mt-4 mb-5'>
+                            <div class='card' style='width: 18rem;'>
+                                <img src='/MIGHTY-MIIGHT-MOTOR/admin/uploaded_product_images/$item_image' class='card-img-top' alt='#001'>
+                                <div class='card-body'>
+                                    <h4 style='color:#E38B29; font-family: 'Poppins', sans serif;>$item_name</h4>
+                                    <p class='card-text'>$item_description</p>
+                                    <h5>$$item_price</h5>
+                                    <a href='#' class='btn btn-primary'>ADD TO CART</a>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\2.png" class="card-img-top" alt="#002">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mt-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\3.png" class="card-img-top" alt="#003">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\4.png" class="card-img-top" alt="#004">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mt-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\5.png" class="card-img-top" alt="#005">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\6.png" class="card-img-top" alt="#006">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\7.png" class="card-img-top" alt="#007">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\8.png" class="card-img-top" alt="#008">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\9.png" class="card-img-top" alt="#009">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <div class="card" style="width: 18rem;">
-                            <img src="\MIGHTY-MIIGHT-MOTOR\img\cars\mmm\12.png" class="card-img-top" alt="#012">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">ADD TO CART</a>
-                            </div>
-                        </div>
-                    </div>
+                        </div>";
+
+                    }
+                    ?>
+
                 </div>
             </div>
             <!-- Products Contents -->
