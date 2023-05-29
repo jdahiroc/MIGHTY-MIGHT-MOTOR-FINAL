@@ -182,31 +182,37 @@ if (isset($_POST['submit'])) {
         <form method="post">
             <h1>Create an Account</h1>
             <div class="grid gap-3">
-                <div class="pt-5 g-col-6">
+                <div class="form-floating mt-3 g-col-6">
                     <input type="text" id="fname" name="firstname" placeholder="First Name" class="form-control"
-                        maxlength="50" />
+                        maxlength="50" autocomplete="off" required="required" />
+                    <label for="floatingTextarea">First Name</label>
                 </div>
-                <div class="pt-4 g-col-6">
+                <div class="form-floating mt-3 g-col-6">
                     <input type="text" id="mname" name="middlename" placeholder="Middle Name" class="form-control"
-                        maxlength="50" />
+                        maxlength="50" autocomplete="off" required="required" />
+                    <label for="floatingTextarea">Middle Name</label>
                 </div>
-                <div class="pt-4 g-col-6">
+                <div class="form-floating mt-3 g-col-6">
                     <input type="text" id="lname" name="lastname" placeholder="Last Name" class="form-control"
-                        maxlength="50" />
+                        maxlength="50" autocomplete="off" required="required" />
+                    <label for="floatingTextarea">Last Name</label>
                 </div>
-                <div class="pt-4 g-col-6">
-                    <input type="text" id="email" name="email" placeholder="Email" class="form-control"
-                        maxlength="50" />
+                <div class="form-floating mt-3 g-col-6">
+                    <input type="text" id="email" name="email" placeholder="Email" class="form-control" maxlength="50"
+                        autocomplete="off" required="required" />
+                    <label for="floatingTextarea">Email</label>
                 </div>
                 <br />
                 <hr />
-                <div class="pt-4 g-col-6">
+                <div class="form-floating mt-3 g-col-6">
                     <input type="username" id="user" name="username" placeholder="Username" class="form-control"
-                        maxlength="50" />
+                        maxlength="50" autocomplete="off" required="required" />
+                    <label for="floatingTextarea">Username</label>
                 </div>
-                <div class="pt-4 g-col-6">
+                <div class="form-floating mt-3 g-col-6">
                     <input type="password" id="pwd" name="password" placeholder="Password" class="form-control"
-                        maxlength="50" />
+                        maxlength="50" autocomplete="off" required="required" />
+                    <label for="floatingTextarea">Password</label>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
